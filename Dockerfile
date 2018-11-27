@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:edge
 
 RUN set -ex \
     && echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
@@ -16,7 +16,7 @@ RUN set -ex \
     dhcping \
     drill \
     ethtool \
-    file\
+    file \
     fping \
     iftop \
     iperf \
