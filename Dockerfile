@@ -67,7 +67,9 @@ RUN set -ex \
 # apparmor issue #14140
 RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
 
-RUN adduser -D -u 10000 debugger
+RUN adduser -D  -u 10000 debugger && \
+    echo "debugger ALL=(ALL) ALL" >> /etc/sudoers && \
+    echo "debugger ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER debugger
 
